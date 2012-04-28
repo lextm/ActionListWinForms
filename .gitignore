@@ -1,6 +1,26 @@
-# Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-bin
-obj
-
-# mstest test results
-TestResults
+build/
+*.suo
+*.user
+_ReSharper*
+*.csproj.user
+*.resharper.user
+*.userprefs
+*.suo
+*.cache
+*.trx
+*.pidb
+Thumbs.db
+[Bb]in
+[Dd]ebug
+[Oo]bj
+[Rr]elease
+[Tt]est[Rr]esult*
+_UpgradeReport_Files
+*[Pp]ublish.xml
+*.project
+*.metadata
+logs
+*.generated.cs
+T4MVC.cs
+/SharpSnmpLib/sharpsnmplib.snk
+/packages

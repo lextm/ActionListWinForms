@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E50D1BD-D8EA-4992-8B25-C5A0D7E179A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crad.Windows.Forms.Actions</RootNamespace>
+    <AssemblyName>Crad.Windows.Forms.Actions</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Crad.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Action.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActionCollection.cs" />
+    <Compile Include="AlignCenterAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AlignLeftAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AlignRightAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BoldAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CopyAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CutAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeleteAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StandardActionAttribute.cs" />
+    <Compile Include="FontStyleAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ItalicAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AlignmentBaseAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewDetailsAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PasteAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RedoAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RichTextAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\ActionCollectionEditor.cs" />
+    <Compile Include="ActionList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActionTargetDescriptionInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectAllAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TextBoxBaseAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UnderlineAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UndoAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UpdatablePropertyAttribute.cs" />
+    <Compile Include="ViewLargeIconsAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewListAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewSmallIconsAction.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Action.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AlignCenterAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlignCenterAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlignLeftAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlignLeftAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlignRightAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlignRightAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoldAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BoldAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CopyAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CopyAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CutAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CutAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeleteAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FontStyleAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FontStyleAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images\ActionList.bmp" />
+    <EmbeddedResource Include="ItalicAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ItalicAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AlignmentBaseAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AlignmentBaseAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ListAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewDetailsAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewDetailsAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasteAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PasteAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedoAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RedoAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectAllAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectAllAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UnderlineAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UnderlineAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UndoAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UndoAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLargeIconsAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewLargeIconsAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewListAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewListAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSmallIconsAction.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ViewSmallIconsAction.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Crad.snk" />
+    <None Include="Resources\StyleUnderline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StyleBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StyleItalic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BulletedList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignCenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlignJustified.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
