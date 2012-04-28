@@ -35,7 +35,7 @@ namespace Crad.Windows.Forms.Actions
         #region events and event raisers
         void Application_Idle(object sender, EventArgs e)
         {
-            if (ContainerControl.IsDisposed)
+            if (ContainerControl != null && ContainerControl.IsDisposed)
             {
                 Application.Idle -= Application_Idle;
             }
