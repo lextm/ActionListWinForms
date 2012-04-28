@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Collections.Generic;
@@ -35,7 +35,14 @@ namespace Crad.Windows.Forms.Actions
         #region events and event raisers
         void Application_Idle(object sender, EventArgs e)
         {
-            OnUpdate(EventArgs.Empty);
+            if (ContainerControl.IsDisposed)
+            {
+                Application.Idle -= Application_Idle;
+            }
+            else
+            {
+                OnUpdate(EventArgs.Empty);
+            }
         }
         
         public event EventHandler Update;
@@ -98,7 +105,7 @@ namespace Crad.Windows.Forms.Actions
                     throw new ArgumentException("The Action you selected is owned by another ActionList");
             }
 
-            /* Se extendee appartiene già alla collection, rimuovo l'handler
+            /* Se extendee appartiene gi?alla collection, rimuovo l'handler
              * sul suo evento Click e lo rimuovo dai component associati alla
              * collection */
             if (targets.ContainsKey(extendee))
@@ -181,7 +188,7 @@ namespace Crad.Windows.Forms.Actions
         private void checkInternalCollections()
         {
             /* questo metodo verifica che ogni action su targets
-             * appartenga a questa actionList e che abbia la proprietà
+             * appartenga a questa actionList e che abbia la propriet?
              * ActionList correttamente impostata */
             foreach (Action action in targets.Values)
             {
