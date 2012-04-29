@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>1.1.2.0</version>
+    <authors>Lex Li</authors>
+    <owners>Marco De Sanctis and other contributors</owners>
+    <licenseUrl>http://www.opensource.org/licenses/cpl1.0.php</licenseUrl>
+    <projectUrl>https://github.com/lextm/ActionListWinForms</projectUrl>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Design" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Drawing" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework="" />
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+    </frameworkAssemblies>
+    <id>ActionListWinForms</id>
+    <title>Crad's ActionList for .NET</title>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Everyone who has worked with Borland's Delphi knows how powerful Actions are. Actions are used to link together various UI elements, such as buttons, menu items, and toolbar buttons, making them behave consistently: linked items are checked/ unchecked/ enabled/ disabled at the same time, and they share the same Text and eventually Image property and, of course, execute the same code once clicked.
+
+ActionList for .NET brings these features to Windows Forms developers.</description>
+    <summary>ActionList control for Windows Forms, similar to TActionList from Delphi VCL.</summary>
+    <releaseNotes>04/28/2012: 1.1.2.0 (beta)
+* Fixed disposal exception when container control is disposed.
+
+04/30/2006: Crad's Actions 1.1.1.0 released.
+* Support for creating custom Actions added (with a brief description in this article).
+*  Some new StandardActions added, like ListView actions and About action. 
+
+04/22/2006: First version.</releaseNotes>
+    <copyright>(C) Marco De Sanctis and other contributors</copyright>
+    <language>en-US</language>
+    <tags>windows forms action list</tags>
+  </metadata>
+  <files>
+    <file src="..\bin\net20\Crad.Windows.Forms.Actions.dll" target="lib\net20\Crad.Windows.Forms.Actions.dll" />
+    <file src="..\bin\net40\Crad.Windows.Forms.Actions.dll" target="lib\net40\Crad.Windows.Forms.Actions.dll" />
+  </files>
+</package>
