@@ -4,7 +4,7 @@
     <version>1.1.2-beta</version>
     <authors>Marco De Sanctis and other contributors</authors>
     <owners>Marco De Sanctis and other contributors</owners>
-    <licenseUrl>http://www.opensource.org/licenses/cpl1.0.php</licenseUrl>
+    <licenseUrl>http://www.opensource.org/licenses/cpl1.0.txt</licenseUrl>
     <projectUrl>https://github.com/lextm/ActionListWinForms</projectUrl>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Design" targetFramework="" />
