@@ -8,7 +8,6 @@
     <projectUrl>https://github.com/lextm/ActionListWinForms</projectUrl>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.Design" targetFramework="" />
-      <frameworkAssembly assemblyName="System.Drawing" targetFramework="" />
       <frameworkAssembly assemblyName="System.Windows.Forms" targetFramework="" />
       <frameworkAssembly assemblyName="System" targetFramework="" />
     </frameworkAssemblies>
