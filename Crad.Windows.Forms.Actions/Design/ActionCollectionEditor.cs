@@ -37,13 +37,25 @@ namespace Crad.Windows.Forms.Actions.Design
                 provider.GetService(typeof(ITypeDiscoveryService));
             
             if (tds != null)
-                foreach (Type actionType in tds.GetTypes(typeof(Action), false))
+            {
+                foreach (Type actionType in tds.GetTypes(typeof(Action), false))            
                 {
                     if (actionType.GetCustomAttributes(typeof(StandardActionAttribute), false).Length > 0 &&
                     !res.Contains(actionType))
+                    {
                         res.Add(actionType);
+                    }
                 }
-
+                
+                // IMPORTANT: SharpDevelop's type discovery service fails to return Action above, 
+                // so the following adds Action to the list so as to match Visual Studio result.
+                Type action = typeof(Action);
+                if (!res.Contains(action))
+                {
+                    res.Insert(0, action);
+                }
+            }
+            
             return res.ToArray();
         }
     }

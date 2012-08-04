@@ -8,6 +8,7 @@
  */
 using System;
 using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace Crad.Windows.Forms.Actions
 {
@@ -20,7 +21,12 @@ namespace Crad.Windows.Forms.Actions
         {
             // TODO: make this function an extension method if upgraded to .NET 3.5+
             string location = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            return location.Contains("VisualStudio") || location.Contains("SharpDevelop");
+            if (string.IsNullOrEmpty(location))
+            {
+                return false;
+            }
+            
+            return location.Contains("VisualStudio") || location.Contains("VCSExpress");
         }
     }
 }
