@@ -212,14 +212,33 @@ namespace Crad.Windows.Forms.Actions
                     containerControl = value;
                     if (!DesignMode)
                     {
-                        Form f = containerControl as Form;
+                    	Form f = FindContainerForm(containerControl);
                         f.KeyPreview = true;
                         f.KeyDown += new KeyEventHandler(form_KeyDown);
                     }
                 }
             }
         }
-
+        
+        private Form FindContainerForm(ContainerControl control)
+        {
+            Control iterator = control;
+            
+            // iterate back to the parent form
+            while (!(iterator is Form))
+            {
+                // check if parent is null
+                if (iterator.Parent == null)
+                {
+                    throw new Exception(string.Format("Control {0}'s Parent property is set to null", iterator.Name));
+                }
+                
+                iterator = iterator.Parent;
+            }
+            
+            return iterator as Form;
+        }
+        
         [Browsable(false)]
         public Control ActiveControl
         {
