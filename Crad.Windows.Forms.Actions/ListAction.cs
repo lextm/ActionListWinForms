@@ -28,7 +28,7 @@ namespace Crad.Windows.Forms.Actions
         
         protected override void OnExecute(EventArgs e)
         {
-            if (!DesignMode && TargetListView != null)
+            if (!ComponentExtension.IsInDesignMode(this) && TargetListView != null)
             {
                 TargetListView.View = ListViewStyle;
             }
@@ -37,7 +37,7 @@ namespace Crad.Windows.Forms.Actions
 
         protected override void OnUpdate(EventArgs e)
         {
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
             {
                 this.Checked = (TargetListView != null &&
                     TargetListView.View == ListViewStyle);

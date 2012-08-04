@@ -20,7 +20,7 @@ namespace Crad.Windows.Forms.Actions
             this.enabled = true;
             this.tooltip = new ToolTip();
 
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
                 Application.Idle += new EventHandler(Application_Idle);
         }
 
@@ -178,7 +178,7 @@ namespace Crad.Windows.Forms.Actions
         {
             /* questo metodo effettua il refresh dello stato Enabled e CheckState
              * di ogni action */
-            if (DesignMode)
+            if (ComponentExtension.IsInDesignMode(this))
                 return;
 
             foreach (Action action in actions)
@@ -210,7 +210,7 @@ namespace Crad.Windows.Forms.Actions
                 if (containerControl != value)
                 {
                     containerControl = value;
-                    if (!DesignMode)
+                    if (!ComponentExtension.IsInDesignMode(this))
                     {
                     	Form f = FindContainerForm(containerControl);
                         f.KeyPreview = true;

@@ -35,7 +35,7 @@ namespace Crad.Windows.Forms.Actions
 
         void ISupportInitialize.EndInit()
         {
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
                 this.Text = string.Format(textPrefix, productName);
         }
 

@@ -12,7 +12,7 @@ namespace Crad.Windows.Forms.Actions
 
         protected override void OnExecute(EventArgs e)
         {
-            if (!DesignMode && ActiveRichTextBox != null)
+            if (!ComponentExtension.IsInDesignMode(this) && ActiveRichTextBox != null)
             {
                 ActiveRichTextBox.SelectionAlignment = Alignment;
             }
@@ -20,7 +20,7 @@ namespace Crad.Windows.Forms.Actions
         }
         protected override void OnUpdate(EventArgs e)
         {
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
             {
                 this.Checked =
                     (ActiveRichTextBox != null &&

@@ -26,7 +26,7 @@ namespace Crad.Windows.Forms.Actions
 
         protected override void OnExecute(EventArgs e)
         {
-            if (!DesignMode && ActiveTextBox != null)
+            if (!ComponentExtension.IsInDesignMode(this) && ActiveTextBox != null)
             {
                 ActiveTextBox.Paste();
             }

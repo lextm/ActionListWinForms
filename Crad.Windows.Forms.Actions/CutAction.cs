@@ -26,7 +26,7 @@ namespace Crad.Windows.Forms.Actions
 
         protected override void OnExecute(EventArgs e)
         {
-            if (!DesignMode && ActiveTextBox != null)
+            if (!ComponentExtension.IsInDesignMode(this) && ActiveTextBox != null)
             {
                 ActiveTextBox.Cut();
             }
@@ -34,7 +34,7 @@ namespace Crad.Windows.Forms.Actions
         }
         protected override void OnUpdate(EventArgs e)
         {
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
             {
                 this.Enabled = (ActiveTextBox != null &&
                     ActiveTextBox.SelectionLength > 0 && !ActiveTextBox.ReadOnly);

@@ -89,6 +89,7 @@
     <Compile Include="BoldAction.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ComponentExtension.cs" />
     <Compile Include="CopyAction.cs">
       <SubType>Component</SubType>
     </Compile>

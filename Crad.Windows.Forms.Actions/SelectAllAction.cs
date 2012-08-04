@@ -24,7 +24,7 @@ namespace Crad.Windows.Forms.Actions
 
         protected override void OnExecute(EventArgs e)
         {
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
             {
                 if (ActiveTextBox != null && ActiveTextBox.CanSelect)
                     ActiveTextBox.SelectAll();
@@ -34,7 +34,7 @@ namespace Crad.Windows.Forms.Actions
         }
         protected override void OnUpdate(EventArgs e)
         {
-            if (!DesignMode)
+            if (!ComponentExtension.IsInDesignMode(this))
             {
                 this.Enabled = (ActiveTextBox != null && ActiveTextBox.CanSelect);
             }
