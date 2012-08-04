@@ -8,6 +8,7 @@
  */
 using System;
 using System.ComponentModel;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Crad.Windows.Forms.Actions
@@ -17,16 +18,19 @@ namespace Crad.Windows.Forms.Actions
     /// </summary>
     public static class ComponentExtension
     {
+        private static bool _designMode;
+        
+        static ComponentExtension()
+        {
+            var designerHosts = new List<string>() { "devenv", "vcsexpress", "vbexpress", "vcexpress", "sharpdevelop" };
+            var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant();
+            _designMode = designerHosts.Contains(processName);
+        }
+        
         internal static bool IsInDesignMode(Component component)
         {
             // TODO: make this function an extension method if upgraded to .NET 3.5+
-            string location = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            if (string.IsNullOrEmpty(location))
-            {
-                return false;
-            }
-            
-            return location.Contains("VisualStudio") || location.Contains("VCSExpress");
+            return _designMode;
         }
     }
 }
