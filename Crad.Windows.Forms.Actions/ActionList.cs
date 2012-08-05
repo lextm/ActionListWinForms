@@ -41,11 +41,13 @@ namespace Crad.Windows.Forms.Actions
             }
             else
             {
+                AttachKeyDownHandler();
                 OnUpdate(EventArgs.Empty);
             }
         }
         
         public event EventHandler Update;
+
         protected virtual void OnUpdate(EventArgs eventArgs)
         {
             // si solleva l'evento Update per l'ActionList
@@ -207,21 +209,53 @@ namespace Crad.Windows.Forms.Actions
             get { return containerControl; }
             set
             {
-                if (containerControl != value)
+                if (containerControl == value)
                 {
-                    containerControl = value;
-                    if (!ComponentExtension.IsInDesignMode(this))
-                    {
-                    	Form f = FindContainerForm(containerControl);
-                        f.KeyPreview = true;
-                        f.KeyDown += new KeyEventHandler(form_KeyDown);
-                    }
+                    return;
                 }
+
+                if (containerControl != null)
+                {
+                    throw new Exception("switching ActionList to another container is not supported");
+                }
+
+                containerControl = value;
+                AttachKeyDownHandler();                
             }
+        }
+
+        private bool attached;
+
+        private void AttachKeyDownHandler()
+        {
+            if (ComponentExtension.IsInDesignMode(this))
+            {
+                return;
+            }
+
+            if (attached)
+            {
+                return;
+            }
+
+            Form f = FindContainerForm(containerControl);
+            if (f == null)
+            {
+                return;
+            }
+
+            attached = true;
+            f.KeyPreview = true;
+            f.KeyDown += new KeyEventHandler(form_KeyDown);
         }
         
         private Form FindContainerForm(ContainerControl control)
         {
+            if (control == null)
+            {
+                return null;
+            }
+
             Control iterator = control;
             
             // iterate back to the parent form
@@ -230,7 +264,7 @@ namespace Crad.Windows.Forms.Actions
                 // check if parent is null
                 if (iterator.Parent == null)
                 {
-                    throw new Exception(string.Format("Control {0}'s Parent property is set to null", iterator.Name));
+                    return null;
                 }
                 
                 iterator = iterator.Parent;
