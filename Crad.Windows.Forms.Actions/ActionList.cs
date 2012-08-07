@@ -219,8 +219,7 @@ namespace Crad.Windows.Forms.Actions
                     throw new Exception("switching ActionList to another container is not supported");
                 }
 
-                containerControl = value;
-                AttachKeyDownHandler();                
+                containerControl = value;              
             }
         }
 
@@ -238,7 +237,12 @@ namespace Crad.Windows.Forms.Actions
                 return;
             }
 
-            Form f = FindContainerForm(containerControl);
+            if (containerControl == null)
+            {
+                return;
+            }
+
+            Form f = containerControl.FindForm();
             if (f == null)
             {
                 return;
@@ -247,32 +251,8 @@ namespace Crad.Windows.Forms.Actions
             attached = true;
             f.KeyPreview = true;
             f.KeyDown += new KeyEventHandler(form_KeyDown);
-        }
-        
-        private Form FindContainerForm(ContainerControl control)
-        {
-            if (control == null)
-            {
-                return null;
-            }
-
-            Control iterator = control;
-            
-            // iterate back to the parent form
-            while (!(iterator is Form))
-            {
-                // check if parent is null
-                if (iterator.Parent == null)
-                {
-                    return null;
-                }
-                
-                iterator = iterator.Parent;
-            }
-            
-            return iterator as Form;
-        }
-        
+        }        
+      
         [Browsable(false)]
         public Control ActiveControl
         {
