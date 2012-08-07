@@ -5,7 +5,7 @@ using System.Drawing.Design;
 
 namespace Crad.Windows.Forms.Actions
 {
-    [Editor(typeof(Design.ActionCollectionEditor), typeof(UITypeEditor))]
+    [Editor("Crad.Windows.Forms.Actions.Design.ActionCollectionEditor, Crad.Windows.Forms.Actions.Design", typeof(UITypeEditor))]
     public class ActionCollection: Collection<Action>
     {
         public ActionCollection(ActionList parent)
