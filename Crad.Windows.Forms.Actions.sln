@@ -1,9 +1,10 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 11
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crad.Windows.Forms.Actions", "Crad.Windows.Forms.Actions\Crad.Windows.Forms.Actions.csproj", "{6E50D1BD-D8EA-4992-8B25-C5A0D7E179A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crad.Windows.Forms.Actions.Sample", "ActionsDemo\Crad.Windows.Forms.Actions.Sample.csproj", "{88AB67C7-A0CF-4811-BC0F-7F908A38E9CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crad.Windows.Forms.Actions.Design", "Crad.Windows.Forms.Actions.Design\Crad.Windows.Forms.Actions.Design.csproj", "{CC59F79A-4F31-454A-B969-DDC2DA5F6DA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +20,10 @@ Global
 		{88AB67C7-A0CF-4811-BC0F-7F908A38E9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88AB67C7-A0CF-4811-BC0F-7F908A38E9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88AB67C7-A0CF-4811-BC0F-7F908A38E9CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC59F79A-4F31-454A-B969-DDC2DA5F6DA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC59F79A-4F31-454A-B969-DDC2DA5F6DA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC59F79A-4F31-454A-B969-DDC2DA5F6DA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC59F79A-4F31-454A-B969-DDC2DA5F6DA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
