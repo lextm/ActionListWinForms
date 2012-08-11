@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.1.2-beta</version>
-    <authors>Marco De Sanctis and other contributors</authors>
-    <owners>Marco De Sanctis and other contributors</owners>
+    <version>1.2.0-beta</version>
+    <authors>Marco De Sanctis, Lex Li, and other contributors</authors>
+    <owners>Marco De Sanctis, Lex Li, and other contributors</owners>
     <licenseUrl>http://www.opensource.org/licenses/cpl1.0.txt</licenseUrl>
     <projectUrl>https://github.com/lextm/ActionListWinForms</projectUrl>
     <frameworkAssemblies>
@@ -18,17 +18,19 @@
 
 ActionList for .NET brings these features to Windows Forms developers.</description>
     <summary>ActionList control for Windows Forms, similar to TActionList from Delphi VCL.</summary>
-    <releaseNotes>04/28/2012: 1.1.2.0 (beta)
-* Fixed disposal exception when container control is disposed.
+    <releaseNotes>04/28/2012: 1.2.0 (beta)
+* [GH#1] Fixed NullReferenceException when placed on UserControl.
+* [GH#2] Fixed disposal exception when container control is disposed.
+* [GH#3] Fixed Action missing in Actions editor within SharpDevelop issue.
 
 04/30/2006: Crad's Actions 1.1.1.0 released.
 * Support for creating custom Actions added (with a brief description in this article).
 *  Some new StandardActions added, like ListView actions and About action. 
 
 04/22/2006: First version.</releaseNotes>
-    <copyright>(C) Marco De Sanctis and other contributors</copyright>
+    <copyright>(C) Marco De Sanctis, Lex Li, and other contributors</copyright>
     <language>en-US</language>
-    <tags>windows forms action list</tags>
+    <tags>windows forms action list winforms controls actionlist visualstudio</tags>
   </metadata>
   <files>
     <file src="..\bin\net20\Crad.Windows.Forms.Actions.dll" target="lib\net20\Crad.Windows.Forms.Actions.dll" />
