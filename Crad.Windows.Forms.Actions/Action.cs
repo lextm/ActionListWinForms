@@ -298,11 +298,23 @@ namespace Crad.Windows.Forms.Actions
             if (propertyName == "ToolTipText")
             {
                 Control c = target as Control;
-
                 if (c != null && ActionList.ToolTip.CanExtend(c))
+                {
                     ActionList.ToolTip.SetToolTip(c, (string)value);
+                    return true;
+                }
+
+                ToolStripItem b = target as ToolStripItem;
+                if (b != null)
+                {
+                    b.ToolTipText = (string)value;
+                    return true;
+                }
+
+                // IMPORTANT: do nothing for other cases.
                 return true;
             }
+
             return false;
         }
 
