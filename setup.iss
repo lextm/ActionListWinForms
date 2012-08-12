@@ -61,11 +61,13 @@ Root: "HKLM"; Subkey: "SOFTWARE\Microsoft\.NETFramework\v4.0.30319\AssemblyFolde
 
 [Run]
 Filename: "{app}\Toolbox.exe"; Parameters: "/vs2008 /installdesktop ""{app}\net20\Crad.Windows.Forms.Actions.dll"" ""ActionList for WinForms"""; WorkingDir: "{app}"; Flags: waituntilterminated
+Filename: "{app}\Toolbox.exe"; Parameters: "/vs2010 /installdesktop ""{app}\net20\Crad.Windows.Forms.Actions.dll"" ""ActionList for WinForms"""; WorkingDir: "{app}"; Flags: waituntilterminated
 Filename: "{app}\gacutil_2.0.exe"; Parameters: "-i ""{app}\net20\Crad.Windows.Forms.Actions.dll"""; WorkingDir: "{app}"; Flags: waituntilterminated runhidden
 Filename: "{app}\gacutil_2.0.exe"; Parameters: "-i ""{app}\net20\Crad.Windows.Forms.Actions.Design.dll"""; WorkingDir: "{app}"; Flags: waituntilterminated runhidden
 
 [UninstallRun]
 Filename: "{app}\Toolbox.exe"; Parameters: "/vs2008 /uninstall ""ActionList for WinForms"""; WorkingDir: "{app}"; Flags: waituntilterminated
+Filename: "{app}\Toolbox.exe"; Parameters: "/vs2010 /uninstall ""ActionList for WinForms"""; WorkingDir: "{app}"; Flags: waituntilterminated
 Filename: "{app}\gacutil_2.0.exe"; Parameters: "-u Crad.Windows.Forms.Actions"; WorkingDir: "{app}"; Flags: waituntilterminated
 Filename: "{app}\gacutil_2.0.exe"; Parameters: "-u Crad.Windows.Forms.Actions.Design"; WorkingDir: "{app}"; Flags: waituntilterminated
 
