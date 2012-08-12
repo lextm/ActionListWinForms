@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.2.0-beta</version>
+    <version>1.2.0.0</version>
     <authors>Marco De Sanctis, Lex Li, and other contributors</authors>
     <owners>Marco De Sanctis, Lex Li, and other contributors</owners>
     <licenseUrl>http://www.opensource.org/licenses/cpl1.0.txt</licenseUrl>
@@ -16,12 +16,17 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Everyone who has worked with Borland's Delphi knows how powerful Actions are. Actions are used to link together various UI elements, such as buttons, menu items, and toolbar buttons, making them behave consistently: linked items are checked/ unchecked/ enabled/ disabled at the same time, and they share the same Text and eventually Image property and, of course, execute the same code once clicked.
 
-ActionList for .NET brings these features to Windows Forms developers.</description>
+ActionList for .NET brings these features to Windows Forms developers.
+
+Please also download installer from https://github.com/lextm/ActionListWinForms/downloads so as to install controls into Visual Studio.</description>
     <summary>ActionList control for Windows Forms, similar to TActionList from Delphi VCL.</summary>
-    <releaseNotes>04/28/2012: 1.2.0 (beta)
+    <releaseNotes>08/12/2012: 1.2.0
 * [GH#1] Fixed NullReferenceException when placed on UserControl.
 * [GH#2] Fixed disposal exception when container control is disposed.
 * [GH#3] Fixed Action missing in Actions editor within SharpDevelop issue.
+* [GH#6] Fixed ToolTipText of ToolStripButton return empty string issue.
+* [GH#8] Added a Visual Studio friendly installer.
+* [GH#9] Split design time support to a separate assembly.
 
 04/30/2006: Crad's Actions 1.1.1.0 released.
 * Support for creating custom Actions added (with a brief description in this article).
