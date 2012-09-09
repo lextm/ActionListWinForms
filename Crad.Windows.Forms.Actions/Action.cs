@@ -10,10 +10,10 @@ namespace Crad.Windows.Forms.Actions
 {
     [ToolboxBitmap(typeof(Action), "Images.Action.bmp"),
      DefaultEvent("Execute"), StandardAction]
-    public class Action: Component
+    public class Action : Component
     {
         protected enum ActionWorkingState
-        { 
+        {
             Listening,
             Driving
         }
@@ -80,7 +80,7 @@ namespace Crad.Windows.Forms.Actions
         {
             targets.Remove(extendee);
             RemoveHandler(extendee);
-            OnRemovingTarget(extendee);            
+            OnRemovingTarget(extendee);
         }
 
         internal void InternalAddTarget(Component extendee)
@@ -104,7 +104,7 @@ namespace Crad.Windows.Forms.Actions
         protected internal ActionList ActionList
         {
             get { return actionList; }
-            set 
+            set
             {
                 if (actionList != value)
                 {
@@ -112,14 +112,14 @@ namespace Crad.Windows.Forms.Actions
                 }
             }
         }
-        
+
         #region common properties
         private string _text;
-        [DefaultValue(""), UpdatableProperty(), Localizable(true)]
+        [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor)), DefaultValue(""), UpdatableProperty(), Localizable(true)]
         public string Text
         {
             get { return _text; }
-            set 
+            set
             {
                 if (_text != value)
                 {
@@ -128,7 +128,7 @@ namespace Crad.Windows.Forms.Actions
                 }
             }
         }
-        
+
         [DefaultValue(false)]
         public bool Checked
         {
@@ -171,7 +171,7 @@ namespace Crad.Windows.Forms.Actions
                 else
                     return _enabled;
             }
-            set 
+            set
             {
                 if (_enabled != value)
                 {
@@ -186,7 +186,7 @@ namespace Crad.Windows.Forms.Actions
         public Image Image
         {
             get { return image; }
-            set 
+            set
             {
                 if (image != value)
                 {
@@ -201,7 +201,7 @@ namespace Crad.Windows.Forms.Actions
         public bool CheckOnClick
         {
             get { return checkOnClick; }
-            set 
+            set
             {
                 if (checkOnClick != value)
                 {
@@ -216,13 +216,13 @@ namespace Crad.Windows.Forms.Actions
         public Keys ShortcutKeys
         {
             get { return shortcutKeys; }
-            set 
+            set
             {
                 if (shortcutKeys != value)
                 {
                     shortcutKeys = value;
                     KeysConverter kc = new KeysConverter();
-                    string s = (string) kc.ConvertTo(value, typeof(string));
+                    string s = (string)kc.ConvertTo(value, typeof(string));
                     UpdateAllTargets("ShortcutKeyDisplayString", s);
                 }
             }
@@ -244,11 +244,11 @@ namespace Crad.Windows.Forms.Actions
         }
 
         private string toolTipText;
-        [DefaultValue(""), UpdatableProperty, Localizable(true)]
+        [Editor("System.ComponentModel.Design.MultilineStringEditor, System.Design, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor)), DefaultValue(""), UpdatableProperty, Localizable(true)]
         public string ToolTipText
         {
             get { return toolTipText; }
-            set 
+            set
             {
                 if (toolTipText != value)
                 {
@@ -273,7 +273,7 @@ namespace Crad.Windows.Forms.Actions
                 updateProperty(c, propertyName, value);
             }
         }
-        
+
         private void updateProperty(Component target, string propertyName, object value)
         {
             WorkingState = ActionWorkingState.Driving;
@@ -289,7 +289,7 @@ namespace Crad.Windows.Forms.Actions
             finally
             {
                 WorkingState = ActionWorkingState.Listening;
-            }            
+            }
         }
 
         protected virtual bool SpecialUpdateProperty(
@@ -308,6 +308,7 @@ namespace Crad.Windows.Forms.Actions
                 if (b != null)
                 {
                     b.ToolTipText = (string)value;
+                    b.AutoToolTip = string.IsNullOrEmpty(b.ToolTipText);
                     return true;
                 }
 
@@ -351,7 +352,7 @@ namespace Crad.Windows.Forms.Actions
             }
 
             // Casi particolari
-            // verifico se extendee è un ToolbarButton
+            // verifico se extendee ?un ToolbarButton
             ToolBarButton button = extendee as ToolBarButton;
             if (button != null)
             {
@@ -376,7 +377,7 @@ namespace Crad.Windows.Forms.Actions
             }
 
             // Casi particolari
-            // verifico se extendee è un ToolbarButton
+            // verifico se extendee ?un ToolbarButton
             ToolBarButton button = extendee as ToolBarButton;
             if (button != null)
             {
@@ -406,7 +407,7 @@ namespace Crad.Windows.Forms.Actions
             if (WorkingState == ActionWorkingState.Listening)
             {
                 Component target = sender as Component;
-                Debug.Assert(target != null, "Target non è un component su handleClick");
+                Debug.Assert(target != null, "Target non ?un component su handleClick");
                 Debug.Assert(targets.Contains(target), "Target non esiste su collection targets su handleClick");
 
                 DoExecute();
@@ -433,7 +434,7 @@ namespace Crad.Windows.Forms.Actions
                 Component target = sender as Component;
                 CheckState = (CheckState)ActionList.
                     TypesDescription[sender.GetType()].GetValue("CheckState", sender);
-                    
+
             }
         }
         #endregion
@@ -462,6 +463,6 @@ namespace Crad.Windows.Forms.Actions
                 this.Checked = !this.Checked;
             DoExecute();
         }
-        #endregion        
+        #endregion
     }
 }
