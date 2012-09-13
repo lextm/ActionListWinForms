@@ -22,7 +22,7 @@ namespace Crad.Windows.Forms.Actions
         
         static ComponentExtension()
         {
-            var designerHosts = new List<string>() { "devenv", "vcsexpress", "vbexpress", "vcexpress", "sharpdevelop" };
+            var designerHosts = new List<string>() { "devenv", "vcsexpress", "vbexpress", "vcexpress", "wdexpress", "sharpdevelop" };
             var processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLowerInvariant();
             _designMode = designerHosts.Contains(processName);
         }
