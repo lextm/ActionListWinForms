@@ -17,7 +17,7 @@
 
 ActionList for .NET brings these features to Windows Forms developers.
 
-Please also download installer from https://github.com/lextm/ActionListWinForms/downloads so as to install controls into Visual Studio.</description>
+Please also download and execute 1.3.0 installer from https://dl.dropbox.com/u/103746479/installers/actionlist/setup.exe so as to enable design time support in Visual Studio.</description>
     <summary>ActionList control for Windows Forms, similar to TActionList from Delphi VCL.</summary>
     <releaseNotes>12/15/2012: 1.3.0
 * [GH#11] Better control over AutoToolTip property of ToolStripItem.
