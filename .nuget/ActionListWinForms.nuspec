@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <version>1.2.0.1</version>
+    <version>1.3.0.0</version>
     <authors>Marco De Sanctis, Lex Li, and other contributors</authors>
     <owners>Marco De Sanctis, Lex Li, and other contributors</owners>
     <licenseUrl>http://www.opensource.org/licenses/cpl1.0.txt</licenseUrl>
@@ -19,7 +19,11 @@ ActionList for .NET brings these features to Windows Forms developers.
 
 Please also download installer from https://github.com/lextm/ActionListWinForms/downloads so as to install controls into Visual Studio.</description>
     <summary>ActionList control for Windows Forms, similar to TActionList from Delphi VCL.</summary>
-    <releaseNotes>08/12/2012: 1.2.0
+    <releaseNotes>12/15/2012: 1.3.0
+* [GH#11] Better control over AutoToolTip property of ToolStripItem.
+* [GH#12] Added support for Visual Studio Express 2012 for Windows Desktop.
+
+08/12/2012: 1.2.0
 * [GH#1] Fixed NullReferenceException when placed on UserControl.
 * [GH#2] Fixed disposal exception when container control is disposed.
 * [GH#3] Fixed Action missing in Actions editor within SharpDevelop issue.
