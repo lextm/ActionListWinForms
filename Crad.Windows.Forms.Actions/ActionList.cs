@@ -147,7 +147,7 @@ namespace Crad.Windows.Forms.Actions
         protected virtual Type[] GetSupportedTypes()
         {
             return new Type[] {typeof(ButtonBase), typeof(ToolStripButton),
-                typeof(ToolStripMenuItem), typeof(ToolBarButton), typeof(MenuItem)};
+                typeof(ToolStripMenuItem)};
         }
         #endregion
 

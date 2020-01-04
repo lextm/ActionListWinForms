@@ -350,14 +350,6 @@ namespace Crad.Windows.Forms.Actions
             {
                 checkStateChangedEvent.AddEventHandler(extendee, checkStateChangedEventHandler);
             }
-
-            // Casi particolari
-            // verifico se extendee ?un ToolbarButton
-            ToolBarButton button = extendee as ToolBarButton;
-            if (button != null)
-            {
-                button.Parent.ButtonClick += new ToolBarButtonClickEventHandler(toolbar_ButtonClick);
-            }
         }
 
         protected virtual void RemoveHandler(Component extendee)
@@ -375,26 +367,12 @@ namespace Crad.Windows.Forms.Actions
             {
                 checkStateChangedEvent.RemoveEventHandler(extendee, checkStateChangedEventHandler);
             }
-
-            // Casi particolari
-            // verifico se extendee ?un ToolbarButton
-            ToolBarButton button = extendee as ToolBarButton;
-            if (button != null)
-            {
-                button.Parent.ButtonClick -= new ToolBarButtonClickEventHandler(toolbar_ButtonClick);
-            }
         }
 
         #endregion
 
         #region Handling eventi target
         #region Click
-        private void toolbar_ButtonClick(object sender, ToolBarButtonClickEventArgs e)
-        {
-            // called if sender is ToolBarButton
-            if (this.targets.Contains(e.Button))
-                handleClick(e.Button, e);
-        }
 
         private void target_Click(object sender, EventArgs e)
         {
